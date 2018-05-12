@@ -60,72 +60,72 @@
                   Sinon, on dit a l'utilisateur qu'il a déjà postulé au job
                 -->
 
-                  @foreach ($proposals as $proposal)
-                      @if ($proposal->job_id !== $job->id && $proposal->user_id !== Auth::user()->id )
-                        @guest
+                @guest
 
-                          <div class="">
 
-                            <button class="btn btn-outline-primary bouton-autres-jobs" style="background-color: transparent; color: #000;" type="button" name="button">
-                              <a class="nav-link" href="{{ route('login') }}">
-                                Connecte toi pour postuler</a>
+                  <div class="">
+
+                    <button class="btn btn-outline-primary bouton-autres-jobs" style="background-color: transparent; color: #000;" type="button" name="button">
+                      <a class="nav-link" href="{{ route('login') }}">
+                        Connecte toi pour postuler</a>
+                    </button>
+
+                  </div>
+
+                  @else
+
+
+
+                      @if($test == $job->id)
+
+
+
+                        <div class="">
+
+                          <button class="btn btn-outline-primary bouton-autres-jobs" style="background-color: transparent; color: #000;" type="button" name="button">
+                              T'as déjà postulé à ce job !
+                          </button>
+
+                        </div>
+
+                      @else
+                        <form enctype="multipart/form-data" action="{{ route('proposals.store') }}" method="post">
+                            {{ csrf_field() }}
+
+
+
+                            <select name="job_id" class="form-control" required>
+                                    <option value="{{ $job->id }}">Titre du job: {{ $job->title }}</option>
+                            </select>
+                            <select name="user_id" class="form-control" required>
+                                    <option value="{{ Auth::user()->id }}">Ton nom: {{ Auth::user()->name }}</option>
+                            </select>
+                            <div class="form-group">
+                              <textarea name="text" placeholder="Dites ce que vous pouvez apporter, quand et pourquoi vous pouvez faire le job" class="form-control" rows="5" id="text"></textarea>
+                            </div>
+                            <div class="form-group">
+                              <input type="text" class="form-control" name="price" placeholder="Mets ton prix">
+                            </div>
+                            <div class="form-group">
+                              <input type="file" class="form-control" name="file" placeholder="Mets ton prix">
+                            </div>
+                            <button id="test" type="submit" class="btn btn-outline-primary">
+                              Postuler
                             </button>
+                        </form>
 
-                          </div>
-                        @else
-
-                          <form enctype="multipart/form-data" action="{{ route('proposals.store') }}" method="post">
-                              {{ csrf_field() }}
+                    @endif
 
 
 
-                              <select name="job_id" class="form-control" required>
-                                      <option value="{{ $job->id }}">Titre du job: {{ $job->title }}</option>
-                              </select>
-                              <select name="user_id" class="form-control" required>
-                                      <option value="{{ Auth::user()->id }}">Ton nom: {{ Auth::user()->name }}</option>
-                              </select>
-                              <div class="form-group">
-                                <textarea name="text" placeholder="Dites ce que vous pouvez apporter, quand et pourquoi vous pouvez faire le job" class="form-control" rows="5" id="text"></textarea>
-                              </div>
-                              <div class="form-group">
-                                <input type="text" class="form-control" name="price" placeholder="Mets ton prix">
-                              </div>
-                              <div class="form-group">
-                                <input type="file" class="form-control" name="file" placeholder="Mets ton prix">
-                              </div>
-                              <button type="submit" class="btn btn-outline-primary">
-                                Postuler
-                              </button>
-                          </form>
 
-                        @endguest
-                      @elseif ($proposal->job_id == $job->id && $proposal->user_id == Auth::user()->id )
-                        @guest
-                          <div class="">
 
-                            <button class="btn btn-outline-primary bouton-autres-jobs" style="background-color: transparent; color: #000;" type="button" name="button">
-                              <a class="nav-link" href="{{ route('login') }}">
-                                Connecte toi pour postuler</a>
-                            </button>
 
-                          </div>
-                        @else
-                          <div class="">
 
-                            <button class="btn btn-outline-primary bouton-autres-jobs" style="background-color: transparent; color: #000;" type="button" name="button">
-                                T'as déjà postulé à ce job !
-                            </button>
-                            {{ $proposal->job_id }}
-                            {{ $job->id }} /
 
-                            {{ $proposal->user_id }}
-                            {{ Auth::user()->id }}
+                    @endguest
 
-                          </div>
-                        @endguest
-                      @endif
-                  @endforeach
+
 
 
 

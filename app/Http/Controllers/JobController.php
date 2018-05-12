@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Job;
 use App\User;
 use App\Proposal;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class JobController extends Controller
@@ -65,13 +66,31 @@ class JobController extends Controller
      * @param  \App\Job  $job
      * @return \Illuminate\Http\Response
      */
+
+
+
+
+
     public function show(Job $job)
     {
+      $test = -1;
         //
-        $proposals = Proposal::orderBy('id')->get();
-        $jobs = Job::with('proposals')->get();
-        $users = User::orderBy('id')->get();
-        return view('jobs.show', ['job' => $job, 'proposals' => $proposals, 'users' => $users]);
+        $proposals = Proposal::get();
+          foreach (Auth::user()->proposals as $proposal) {
+            if ($proposal->job_id == $job->id) {
+              $test = $proposal->job_id;
+              return view('jobs.show', ['job' => $job, 'test' => $test]);
+            }
+            else {
+
+              $test = -1;
+              return view('jobs.show', ['job' => $job, 'test' => $test]);
+
+            }
+          }
+        
+
+          return view('jobs.show', ['job' => $job, 'test' => $test]);
     }
 
     /**
