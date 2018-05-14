@@ -15,9 +15,15 @@ Route::resource('jobs', 'JobController');
 
 Route::resource('proposals', 'ProposalController');
 
+Route::resource('users', 'UserController');
+
 
 Route::get('/', function () {
     return view('homepage');
+});
+
+Route::get('/dashboard', function () {
+    return view('users.dashboard');
 });
 
 Route::get('/apropos', function () {

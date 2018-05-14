@@ -73,8 +73,12 @@ class JobController extends Controller
 
     public function show(Job $job)
     {
-      $test = -1;
-        //
+
+      if (Auth::user()) {
+
+        $test = -1;
+
+
         $proposals = Proposal::get();
           foreach (Auth::user()->proposals as $proposal) {
             if ($proposal->job_id == $job->id) {
@@ -88,9 +92,18 @@ class JobController extends Controller
 
             }
           }
-        
+
 
           return view('jobs.show', ['job' => $job, 'test' => $test]);
+
+
+      }
+
+      else {
+        return view('jobs.show', ['job' => $job]);
+      }
+
+
     }
 
     /**
