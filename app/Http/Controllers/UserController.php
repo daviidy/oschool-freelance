@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -14,14 +15,12 @@ class UserController extends Controller
      */
     public function index()
     {
-      $users = User::orderBy('name', 'asc')->paginate(9);
-      return view('users.index', ['users' => $users]);
+      $user = Auth::user()->all();
+      return view('users.dashboard', ['user' => $user]);
+
     }
 
-    public function dashboard()
-    {
-      return view('users.dashboard');
-    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -53,7 +52,7 @@ class UserController extends Controller
     public function show(User $user)
     {
         //
-        return view('users.edit', ['user' => $user]);
+        return view('users.dashboard', ['user' => $user]);
     }
 
     /**
@@ -65,6 +64,7 @@ class UserController extends Controller
     public function edit(User $user)
     {
         //
+        return view('users.dashboard', ['user' => $user]);
     }
 
     /**
@@ -77,7 +77,7 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
       $user->update($request->all());
-      return redirect('users');
+      return redirect('home')->with('status', 'Modifications enregistrées !' );
     }
 
     /**

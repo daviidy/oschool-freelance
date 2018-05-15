@@ -8,7 +8,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Oschool Freelance') }}</title>
+    <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+
+    <title>{{ config('app.name', 'Oschool Freelance') }} | @yield('title')</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -83,7 +85,7 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Se déconnecter') }}
                                     </a>
-                                    <a class="dropdown-item" href="/dashboard">
+                                    <a class="dropdown-item" href="/home">
                                         Tableau de bord
                                     </a>
 
@@ -101,6 +103,13 @@
         </nav>
 
         <main class=""> <!-- y avait py-4 -->
+
+          <!--on prepare un div qui va contenir les messages de succes -->
+            @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+            @endif
             @yield('content')
         </main>
     </div>

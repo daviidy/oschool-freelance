@@ -11,7 +11,7 @@ class DefaultValueFile extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up() 
     {
       Schema::table('proposals', function (Blueprint $table) {
           $table->string('file')->default('image.jpeg');

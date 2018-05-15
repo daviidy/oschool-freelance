@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+      /*je recupere les infos utiisateurs que je mets dans la
+      variable $user*/
+      $user = Auth::user();
+
+      /*et j'envoie cette variable à la page home*/
+      return view('users.dashboard', ['user' => $user]);
+        //auparavant home
     }
 }

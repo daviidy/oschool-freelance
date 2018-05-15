@@ -22,8 +22,37 @@ Route::get('/', function () {
     return view('homepage');
 });
 
-Route::get('/dashboard', function () {
+/*Route::get('/dashboard', function () {
+  if (Auth::guest()) {
+    return view('auth.login');
+  }
+
+  elseif (Auth::user()) {
     return view('users.dashboard');
+  }
+
+});*/
+
+Route::get('/mes-jobs', function () {
+  if (Auth::guest()) {
+    return view('auth.login');
+  }
+
+  elseif (Auth::user()) {
+    $user = Auth::user();
+    return view('users.mes-jobs', ['user' => $user]);
+  }
+});
+
+Route::get('/notifications', function () {
+  if (Auth::guest()) {
+    return view('auth.login');
+  }
+
+  elseif (Auth::user()) {
+    $user = Auth::user();
+    return view('users.notifications', ['user' => $user]);
+  }
 });
 
 Route::get('/apropos', function () {

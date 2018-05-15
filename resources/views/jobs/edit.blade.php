@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', "Modifier $woman->name" )
+@section('title', "Modifier $job->title" )
 @section('main')
 
 <div class="row justify-content-center">
@@ -9,7 +9,7 @@
     <div class="card">
       <div class="card-block">
         <h1 class="h3 pb-1">{{ $job->title }}</h1>
-        <form enctype="multipart/form-data" action="{{ url('women', $woman) }}" method="post">
+        <form enctype="multipart/form-data" action="{{ url('jobs', $job) }}" method="post">
           {{ csrf_field() }}
           {{ method_field('patch') }}
           <div class="form-group">

@@ -33,5 +33,3 @@
         </nav>
     </div>
 </footer>
-</div>
-</div>
