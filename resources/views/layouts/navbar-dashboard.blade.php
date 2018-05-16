@@ -29,11 +29,8 @@
                         <span class="d-lg-none">Notification</span>
                     </a>
                     <ul class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Notification 1</a>
-                        <a class="dropdown-item" href="#">Notification 2</a>
-                        <a class="dropdown-item" href="#">Notification 3</a>
-                        <a class="dropdown-item" href="#">Notification 4</a>
-                        <a class="dropdown-item" href="#">Another notification</a>
+                        <a class="dropdown-item" href="#">Aucune notification</a>
+
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -45,34 +42,30 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#pablo">
-                        <span class="no-icon">Compte</span>
+                    <a class="nav-link" href="/">
+                        <span class="no-icon">Accueil</span>
                     </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="no-icon">Dropdown</span>
+                        <span class="no-icon">Mon espace</span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="#">Forme-toi</a>
+                        <a class="dropdown-item" href="#">CV en ligne</a>
+                        <a class="dropdown-item" href="#">Contactes-nous</a>
+                        <a class="dropdown-item" href="#">Travailles avec nous</a>
                         <div class="divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">{{ __('Se déconnecter') }}
+                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                             @csrf
+                         </form>
+                       </a>
                     </div>
                 </li>
-                <li class="nav-item">
-                  <a class="dropdown-item" href="{{ route('logout') }}"
-                     onclick="event.preventDefault();
-                                   document.getElementById('logout-form').submit();">
-                      {{ __('Se déconnecter') }}
-                  </a>
 
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                      @csrf
-                  </form>
-                </li>
             </ul>
         </div>
     </div>

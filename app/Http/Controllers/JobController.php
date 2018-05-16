@@ -76,25 +76,27 @@ class JobController extends Controller
 
       if (Auth::user()) {
 
+
         $test = -1;
+        $proposals = Auth::user()->proposals;
+        if ($proposals->isNotEmpty()) {
 
-
-        $proposals = Proposal::get();
-          foreach (Auth::user()->proposals as $proposal) {
+          foreach ($proposals as $proposal) {
             if ($proposal->job_id == $job->id) {
               $test = $proposal->job_id;
               return view('jobs.show', ['job' => $job, 'test' => $test]);
             }
             else {
-
-              $test = -1;
               return view('jobs.show', ['job' => $job, 'test' => $test]);
-
             }
-          }
+          }//end foreach
 
+        }
 
+        else {
           return view('jobs.show', ['job' => $job, 'test' => $test]);
+        }
+
 
 
       }

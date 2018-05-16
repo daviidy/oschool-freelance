@@ -13,7 +13,7 @@ class AddLinksFieldToUsersTable extends Migration
      */
     public function up()
     {
-      Schema::table('users', function (Blueprint $table) {
+      Schema::table('users', function (Blueprint $table) { 
           $table->string('linkedin')->default('dave');
           $table->string('facebook')->default('dave');
           $table->string('lien_cv')->default('dave');

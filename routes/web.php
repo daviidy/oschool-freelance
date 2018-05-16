@@ -40,7 +40,8 @@ Route::get('/mes-jobs', function () {
 
   elseif (Auth::user()) {
     $user = Auth::user();
-    return view('users.mes-jobs', ['user' => $user]);
+    $proposals = Auth::user()->proposals;
+    return view('users.mes-jobs', ['user' => $user, 'proposals' => $proposals ]);
   }
 });
 

@@ -76,7 +76,7 @@
 
 
 
-                      @if($test == $job->id)
+                      @if($test && $test == $job->id)
 
 
 
@@ -94,10 +94,13 @@
 
 
 
-                            <select name="job_id" class="form-control" required>
+                            <select name="job_id" class="form-control" required style="display: none;">
                                     <option value="{{ $job->id }}">Titre du job: {{ $job->title }}</option>
                             </select>
-                            <select name="user_id" class="form-control" required>
+                            <select name="job_title" class="form-control" required style="display: none;">
+                                    <option value="{{ $job->title }}">Titre du job: {{ $job->title }}</option>
+                            </select>
+                            <select name="user_id" class="form-control" required style="display: none;">
                                     <option value="{{ Auth::user()->id }}">Ton nom: {{ Auth::user()->name }}</option>
                             </select>
                             <div class="form-group">

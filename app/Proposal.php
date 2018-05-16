@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Proposal extends Model
 {
-    protected $fillable = ['text', 'file', 'price', 'job_id', 'user_id'];
+    protected $fillable = ['text', 'file', 'price', 'job_id', 'user_id', 'job_title', 'status'];
 
     /**
-     * Get the post that owns the comment. 
+     * Get the post that owns the comment.
      */
     public function user()
     {
