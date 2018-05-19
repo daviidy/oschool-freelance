@@ -33,32 +33,23 @@ Route::get('/', function () {
 
 });*/
 
-Route::get('/mes-jobs', function () {
-  if (Auth::guest()) {
-    return view('auth.login');
-  }
+Route::get('/mes-jobs', 'RouteController@mesJobs');
 
-  elseif (Auth::user()) {
-    $user = Auth::user();
-    $proposals = Auth::user()->proposals;
-    return view('users.mes-jobs', ['user' => $user, 'proposals' => $proposals ]);
-  }
-});
-
-Route::get('/notifications', function () {
-  if (Auth::guest()) {
-    return view('auth.login');
-  }
-
-  elseif (Auth::user()) {
-    $user = Auth::user();
-    return view('users.notifications', ['user' => $user]);
-  }
-});
+Route::get('/notifications', 'RouteController@notifications');
 
 Route::get('/apropos', function () {
-    return view('apropos');
+    return view('apropos'); 
 });
+
+/*Route::get('proposals/{proposal}', 'ProposalController@acceptProposal');*/
+
+Route::get('/proposal/{reject}/{user}', 'ProposalController@rejectProposal')->name('proposal.reject');
+
+
+Route::get('/status/{user}/{accept}', 'ProposalController@acceptProposal')->name('status.accept');
+
+
+Route::post('profile', 'UserController@updateAvatar');
 
 Auth::routes();
 

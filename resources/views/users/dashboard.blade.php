@@ -1,6 +1,6 @@
 @extends('layouts.app-dashboard')
 
-@section('title', 'Tableau de bord')
+@section('title', 'Mon profil')
 
 @section('content')
 
@@ -18,7 +18,7 @@
                         <div class="col-md-8">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Modiifer son profil</h4>
+                                    <h4 class="card-title">Modiifer mon profil</h4>
                                 </div>
                                 <div class="card-body">
 
@@ -208,7 +208,7 @@
 <script src="/assets/js/light-bootstrap-dashboard.js?v=2.0.1" type="text/javascript"></script>
 <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
 <script src="/assets/js/demo.js"></script>
-<script type="text/javascript">
+<!--<script type="text/javascript">
     $(document).ready(function() {
         // Javascript method's body can be found in assets/js/demos.js
         demo.initDashboardPageCharts();
@@ -216,6 +216,6 @@
         demo.showNotification();
 
     });
-</script>
+</script> -->
 
 @endsection

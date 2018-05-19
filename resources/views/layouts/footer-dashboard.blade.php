@@ -3,23 +3,23 @@
         <nav>
             <ul class="footer-menu">
                 <li>
-                    <a href="#">
-                        Home
+                    <a href="/">
+                        Accueil
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        Company
+                        A propos
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/david-yao-6bb95299/" target="_blank">
+                        Notre CEO
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        Portfolio
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        Blog
+                        CV en ligne
                     </a>
                 </li>
             </ul>
@@ -28,7 +28,7 @@
                 <script>
                     document.write(new Date().getFullYear())
                 </script>
-                <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                <a href="http://www.rikudotech.com">Rikudo Technologies</a>, pour vous servir.
             </p>
         </nav>
     </div>

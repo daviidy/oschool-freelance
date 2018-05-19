@@ -28,8 +28,21 @@ class HomeController extends Controller
       variable $user*/
       $user = Auth::user();
 
+      /*je verifie si user est admin. si oui
+      alors j'envoie le dashboard admin, sinon
+      j'envoie le dashboard user par défaut*/
+
       /*et j'envoie cette variable à la page home*/
-      return view('users.dashboard', ['user' => $user]);
+
+      if ($user->isAdmin()) {
+        return view('admin.dashboard', ['user' => $user]);
+      }
+
+      else {
+        return view('users.dashboard', ['user' => $user]);
         //auparavant home
+
+      }
+
     }
 }

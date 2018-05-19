@@ -7,7 +7,7 @@ Tip 2: you can also add an image using data-image tag
     <div class="sidebar-wrapper">
         <div class="logo">
             <a href="/" class="simple-text">
-                <img src="/img/oschool freelance-fond-blanc.png" alt="">
+                <img src="/img/oschool freelance-fond-blanc.png" width="220px" alt="">
             </a>
         </div>
         <ul class="nav">
@@ -20,7 +20,11 @@ Tip 2: you can also add an image using data-image tag
             <li class=" {{ Request::path() == 'mes-jobs' ? 'nav-item active' : "" }}">
                 <a class="nav-link" href="/mes-jobs">
                     <i class="nc-icon nc-notes"></i>
+                    @if (Auth::user()->isAdmin())
+                    <p>Propositions</p>
+                    @else
                     <p>Mes jobs</p>
+                    @endif
                 </a>
             </li>
             <li class=" {{ Request::path() == 'notifications' ? 'nav-item active' : "" }}">

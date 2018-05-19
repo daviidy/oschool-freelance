@@ -41,7 +41,7 @@
 
                           <div class="jobs-list job-price-section">
 
-                            <h1 class="job-price">{{ $job->price }} FCFA</h1>
+                            <h3 class="job-price">{{ $job->price }} FCFA</h1>
 
                             <a href="{{ route('jobs.show', $job) }}">
                             <button type="button" class="btn btn-outline-primary">Postuler</button>

@@ -1,6 +1,6 @@
 @extends('layouts.app-dashboard')
 
-@section('title', 'Tableau de bord')
+@section('title', 'Mes jobs')
 
 @section('content')
 
@@ -31,7 +31,7 @@
 
                                                 <td> {{ $proposal->job_title }} </td>
                                                 <td> {{ $proposal->price }} FCFA</td>
-                                                <td> <button class="btn btn-warning" type="button" name="button">{{ $proposal->status }}</button> </td>
+                                                <td style="color:orange;"> {{ $proposal->status }} </td>
                                             </tr>
                                           @endforeach
 

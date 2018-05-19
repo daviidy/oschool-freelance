@@ -40,13 +40,24 @@
 
     <div class="col-12 col-sm-12 col-md-4 offset-md-2 col-lg-4">
 
-    <button class="bouton-autres-jobs" type="button" name="button">Voir les autres jobs</button>
+    <a href="/home">
+      <button class="bouton-autres-jobs" type="button" name="button">
+        Voir les autres jobs
+      </button>
+    </a>
+
 
     </div>
 
     <div class="col-12 col-sm-12 col-md-4 col-lg-4">
 
-    <button class="btn btn-outline-primary bouton-autres-jobs" style="background-color: transparent; color: #000;" type="button" name="button">Allez à mon tableau de bord</button>
+    <a href="{{ route('jobs.index') }}">
+
+      <button class="btn btn-outline-primary bouton-autres-jobs" style="background-color: transparent; color: #000;" type="button" name="button">
+        Allez à mon tableau de bord
+      </button>
+
+    </a>
 
     </div>
 

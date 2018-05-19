@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Faites le job de vos rêves')
 @section('content')
 
 <section class="section-slider"> <!--debut section 1-->

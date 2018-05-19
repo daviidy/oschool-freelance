@@ -38,6 +38,10 @@ body{
   color: #4774B7;
 }
 
+.job-title a:hover{
+  color: #626262;
+}
+
 .job-price-section{
   float: right;
   display: flex;
@@ -46,6 +50,7 @@ body{
 
 .job-price{
   color: #4774B7;
+  margin-right: 1rem;
 }
 
 .btn-outline-primary:hover{
@@ -65,12 +70,17 @@ footer {
   padding: 40px 0 48px;
   display: flex;
   align-items: center;
+
 }
 
 .footer-style {
   margin: 16px 0;
   display: flex;
   align-items: center;
+}
+
+.footer-style a:hover{
+  color: #4774B7;
 }
 
 .link-footer {
@@ -327,4 +337,21 @@ li a:hover {
 
 footer a:hover{
   color: none;
+}
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+/*login page*/
+
+.login-bloc{
+  background: url(/img/login-page.jpg) no-repeat center fixed;
+  background-size: cover;
+  padding: 80px;
+  height: 70vh;
 }

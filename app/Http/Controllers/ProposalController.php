@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Proposal;
 use App\User;
 use App\Job;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class ProposalController extends Controller
@@ -74,6 +75,20 @@ class ProposalController extends Controller
     public function update(Request $request, Proposal $proposal)
     {
         //
+    }
+
+    public function acceptProposal($user, $accept){
+      $proposal = Proposal::where(['user_id' => $user, 'id' => $accept])->update([
+        'status' => 'Accepté !'
+      ]);
+      return redirect('mes-jobs')->with('status', 'Modifications enregistrées !' );
+    }
+
+    public function rejectProposal($reject, $user){
+      $proposal = Proposal::where(['user_id' => $user, 'job_id' => $reject])->update([
+        'status' => 'Refusé'
+      ]);
+      return redirect('mes-jobs')->with('status', 'Modifications enregistrées !' );
     }
 
     /**

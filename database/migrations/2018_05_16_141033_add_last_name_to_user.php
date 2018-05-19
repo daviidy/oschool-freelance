@@ -15,7 +15,7 @@ class AddLastNameToUser extends Migration
     {
       Schema::table('users', function (Blueprint $table) {
           $table->string('last_name')->default('dave');
-      });
+      }); 
     }
 
     /**

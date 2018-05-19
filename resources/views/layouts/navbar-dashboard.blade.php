@@ -5,7 +5,11 @@
         @if(Request::path() == 'home')
         <a class="navbar-brand" href=""> Mon profil </a>
         @elseif(Request::path() == 'mes-jobs')
+          @if (Auth::user()->isAdmin())
+        <a class="navbar-brand" href=""> Liste des propositions </a>
+          @else
         <a class="navbar-brand" href=""> Mes Jobs </a>
+          @endif
         @elseif(Request::path() == 'notifications')
         <a class="navbar-brand" href=""> Notifications </a>
         @endif
@@ -51,6 +55,7 @@
                         <span class="no-icon">Mon espace</span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        @if (!Auth::user()->isAdmin())
                         <a class="dropdown-item" href="#">Forme-toi</a>
                         <a class="dropdown-item" href="#">CV en ligne</a>
                         <a class="dropdown-item" href="#">Contactes-nous</a>
@@ -63,7 +68,22 @@
                              @csrf
                          </form>
                        </a>
+                        @else
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">{{ __('Se déconnecter') }}
+                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                             @csrf
+                         </form>
+                       </a>
+                       @endif
                     </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('jobs.index') }}">
+                        <span class="no-icon">Jobs Oschool</span>
+                    </a>
                 </li>
 
             </ul>

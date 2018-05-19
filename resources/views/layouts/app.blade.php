@@ -8,9 +8,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="icon" type="image/png" href="/assets/img/favicon.ico">
+    <link rel="icon" type="image/png" href="/assets/img/icone-oschool.ico">
 
-    <title>{{ config('app.name', 'Oschool Freelance') }} | @yield('title')</title>
+    <!--auparavant {{ config('app.name', 'Oschool Freelance') }} -->
+    <title>Oschool Freelance | @yield('title')</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -53,10 +54,10 @@
                         <a class="nav-link" href="{{ route('jobs.index') }}">Jobs Oschool</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/apropos') }}">A propos</a>
+                        <a class="nav-link" href="#">A propos</a> <!-- {{ url('/apropos') }} -->
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="https://oschool.ci">Forme-toi</a>
+                        <a class="nav-link" href="https://oschool.ci" target="_blank">Forme-toi</a>
                       </li>
 
                       @if(Auth::check())

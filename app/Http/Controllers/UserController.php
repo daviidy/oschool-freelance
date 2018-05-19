@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Image;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -77,8 +78,25 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
       $user->update($request->all());
-      return redirect('home')->with('status', 'Modifications enregistrées !' );
+    return redirect('home')->with('status', 'Modifications enregistrées !' );
+
     }
+
+
+  public function updateAvatar(Request $request){
+
+    if($request->hasFile('image')){
+      $image = $request->file('image');
+      $filename = time() . '.' . $image->getClientOriginalExtension();
+      Image::make($image)->save( public_path('/img/usersPhotos/' . $filename ) );
+      $user = Auth::user();
+
+      $user->image = $filename;
+      $user->save();
+      return redirect('home')->with('status', 'Modifications enregistrées !' );
+  }
+
+  }
 
     /**
      * Remove the specified resource from storage.
