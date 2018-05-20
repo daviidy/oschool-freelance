@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Liste des Jobs Oschool')
 @section('content')
     <h1 class="ml-1 text-center page-title">Tous les jobs Oschool</h1>
     <div class="big-bloc-jobs-parent">
