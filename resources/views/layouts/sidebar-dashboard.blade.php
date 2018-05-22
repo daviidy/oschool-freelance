@@ -27,12 +27,12 @@ Tip 2: you can also add an image using data-image tag
                     @endif
                 </a>
             </li>
-            <li class=" {{ Request::path() == 'notifications' ? 'nav-item active' : "" }}">
+          <!--  <li class=" {{ Request::path() == 'notifications' ? 'nav-item active' : "" }}">
                 <a class="nav-link" href="/notifications">
                     <i class="nc-icon nc-bell-55"></i>
                     <p>Notifications</p>
                 </a>
-            </li>
+            </li> -->
         </ul>
     </div>
 </div>

@@ -31,7 +31,13 @@
 
                                                 <td> {{ $proposal->job_title }} </td>
                                                 <td> {{ $proposal->price }} FCFA</td>
+                                                @if($proposal->status == "Accepté !")
+                                                <td style="color:green;"> {{ $proposal->status }} </td>
+                                                @elseif($proposal->status == "Refusé")
+                                                <td style="color:red;"> {{ $proposal->status }} </td>
+                                                @else
                                                 <td style="color:orange;"> {{ $proposal->status }} </td>
+                                                @endif
                                             </tr>
                                           @endforeach
 

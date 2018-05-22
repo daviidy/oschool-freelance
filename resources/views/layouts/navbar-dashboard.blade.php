@@ -29,7 +29,7 @@
                 <li class="dropdown nav-item">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                         <i class="nc-icon nc-planet"></i>
-                        <span class="notification">5</span>
+                        <span class="notification">0</span>
                         <span class="d-lg-none">Notification</span>
                     </a>
                     <ul class="dropdown-menu">
