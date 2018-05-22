@@ -141,7 +141,7 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label>Description</label>
-                                                    <textarea name="description" rows="4" cols="80" class="form-control" placeholder="">{{$user->description}}</textarea>
+                                                    <textarea name="description" rows="5" class="form-control" placeholder="">{{$user->description}}</textarea>
                                                 </div>
                                             </div>
                                         </div>

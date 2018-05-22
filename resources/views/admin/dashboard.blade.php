@@ -45,13 +45,13 @@
                                             <div class="col-md-6 pr-1">
                                                 <div class="form-group">
                                                     <label>Nom</label>
-                                                    <input type="text" name="last_name" class="form-control" placeholder="Company" value="Mike">
+                                                    <input type="text" name="last_name" class="form-control" placeholder="Last Name" value="{{Auth::user()->last_name}}">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 pl-1">
                                                 <div class="form-group">
                                                     <label>Prénoms</label>
-                                                    <input type="text" name="first_name" class="form-control" placeholder="Last Name" value="Andrew">
+                                                    <input type="text" name="first_name" class="form-control" placeholder="First Name" value="{{Auth::user()->first_name}}">
                                                 </div>
                                             </div>
                                         </div>
@@ -60,7 +60,7 @@
                                             <div class="col-md-6 pr-1">
                                                 <div class="form-group">
                                                     <label>Numéro mobile</label>
-                                                    <input type="text" name="number_tel" class="form-control" placeholder="Exemple: 58450600" value="">
+                                                    <input type="text" name="number_tel" class="form-control" placeholder="Exemple: 58450600" value="{{Auth::user()->number_tel}}">
                                                 </div>
                                             </div>
 
@@ -95,7 +95,7 @@
                                           <input class="col-md-6 col-12" type="file" name="image" value="" required>
                                           <button type="submit" class="btn btn-info col-md-4 col-12" name="button">Mettre à jour</button>
                                         </form>
-                                    </div> 
+                                    </div>
 
                                     <p class="description text-center">
                                         "Lamborghini Mercy"
