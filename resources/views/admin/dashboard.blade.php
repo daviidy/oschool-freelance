@@ -95,7 +95,7 @@
                                           <input class="col-md-6 col-12" type="file" name="image" value="" required>
                                           <button type="submit" class="btn btn-info col-md-4 col-12" name="button">Mettre à jour</button>
                                         </form>
-                                    </div>
+                                    </div> 
 
                                     <p class="description text-center">
                                         "Lamborghini Mercy"

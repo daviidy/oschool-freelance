@@ -77,13 +77,29 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+
+      $request->validate([
+        'first_name' => 'nullable|bail|string|sometimes',
+        'last_name' => 'nullable|bail|string|sometimes',
+        'number_tel' => 'nullable|bail|sometimes',
+        'job_title' => 'nullable|bail|string|sometimes',
+        'linkedin' => 'nullable|bail|url|sometimes',
+        'facebook' => 'nullable|bail|url|sometimes',
+        'lien_cv' => 'nullable|bail|url|sometimes',
+        'description' => 'nullable|bail|string|sometimes',
+      ]);
+
       $user->update($request->all());
-    return redirect('home')->with('status', 'Modifications enregistrées !' );
+      return redirect('home')->with('status', 'Modifications enregistrées !' );
 
     }
 
 
   public function updateAvatar(Request $request){
+
+    $this->validate($request, [
+      'image' => 'image',
+    ]);
 
     if($request->hasFile('image')){
       $image = $request->file('image');
