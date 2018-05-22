@@ -10,7 +10,13 @@
     <a class="link-footer" href="#">Développeurs</a>
     <a class="link-footer" href="{{ route('jobs.index') }}">Jobs</a>
     <a class="link-footer" href="#">Qui sommes-nous ?</a>
+  </div>
+
+  <div class="footer-style">
     <a class="link-footer" href="#">A propos</a>
+  </div>
+
+  <div class="footer-style">
     <span class="copyright">© 2018 Rikudo Technologies. Tous droits réservés.</span>
   </div>
 
