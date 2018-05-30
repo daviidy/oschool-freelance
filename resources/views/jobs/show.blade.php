@@ -21,6 +21,20 @@
                 <div class="job-title-single">
 
                 <h1 class="job-title">{{ $job->title }}</h1>
+                @if(Auth::check())
+                    @if (Auth::user()->isAdmin())
+
+                <div class="" style="display: flex;">
+                  <a href="{{ route('jobs.edit', $job) }}"><button class="btn-link fa fa-pencil"></button></a>
+                  <form action="{{ route('jobs.destroy', $job) }}" method="post">
+                      {{ csrf_field() }}
+                      {{ method_field('delete') }}
+                      <button class="fa fa-trash btn-link text-danger" type="submit"></button>
+                </form>
+
+                </div>
+                    @endif
+                @endif
                 <ul class="nav">
                   <li class="nav-item">
                     <p class="nav-link disabled jobs-details">{{ $job->type }}</p>
