@@ -131,7 +131,7 @@ class JobController extends Controller
     {
         //
         $job->update($request->all());
-        return redirect('jobs');
+        return redirect('jobs')->with('status', 'Le job a bien été modifié');
     }
 
     /**
