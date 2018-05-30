@@ -1,14 +1,11 @@
 @extends('layouts.app')
 @section('title', "Modifier $job->title" )
-@section('main')
+@section('content')
 
-<div class="row justify-content-center">
+<div class="row justify-content-center" style="padding: 50px;">
   <div class="col-md-6">
-    <h1 class="h4 text-uppercase">Modifier un job</h1>
+    <i><h1 class="h4 text-uppercase">Modifier le job: {{ $job->title }}</h1></i> 
 
-    <div class="card">
-      <div class="card-block">
-        <h1 class="h3 pb-1">{{ $job->title }}</h1>
         <form enctype="multipart/form-data" action="{{ url('jobs', $job) }}" method="post">
           {{ csrf_field() }}
           {{ method_field('patch') }}
@@ -29,14 +26,12 @@
           </div>
           <div class="form-group">
             <label for="prix">Description du job:</label>
-            <textarea class="form-control" rows="5" id="description">
+            <textarea class="form-control" rows="5" id="description"></textarea>
           </div>
           <button type="submit" class="btn btn-primary">
             Mettre à jour les infos du job
           </button>
         </form>
-      </div>
-    </div>
   </div>
 
 </div>

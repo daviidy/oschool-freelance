@@ -23,10 +23,10 @@
                 <h1 class="job-title">{{ $job->title }}</h1>
                 <ul class="nav">
                   <li class="nav-item">
-                    <p class="nav-link disabled jobs-details">Remote</p>
+                    <p class="nav-link disabled jobs-details">{{ $job->type }}</p>
                   </li>
                   <li class="nav-item">
-                    <p class="nav-link disabled jobs-details">Propositions: {{ $job->number_proposals }}</p>
+                    <p class="nav-link disabled jobs-details">{{ $job->number_proposals }} propositions</p>
                   </li>
                 </ul>
 
@@ -34,7 +34,7 @@
 
                 <div class="job-description">
 
-                  <h2>Description</h2>
+                  <h2>Description du job</h2>
 
                   <div class="description">
 
@@ -48,7 +48,7 @@
 
                 <div class="proposal job-description">
 
-                  <h2>Proposal</h2>
+                  <h2>Ta propostion</h2>
 
                   <!--
                   on recupere le tableau des utilisateurs et

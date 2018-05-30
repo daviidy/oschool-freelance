@@ -2,12 +2,11 @@
 @section('title', 'Ajouter un job')
 @section('content')
 
-<div class="row justify-content-center">
+<div class="row justify-content-center" style="padding: 50px;">
   <div class="col-md-6">
-    <h1 class="h4 text-uppercase">Ajouter un nouveau job</h1>
+    <i><h1 class="h4 text-uppercase">Ajouter un nouveau job</h1></i>
 
-    <form enctype="multipart/form-data" class="card" action="{{ route('jobs.store') }}" method="post">
-      <div class="card-block">
+    <form enctype="multipart/form-data" action="{{ route('jobs.store') }}" method="post">
         {{ csrf_field() }}
         <div class="form-group">
           <label for="title">Titre: </label>
@@ -31,7 +30,6 @@
         <button type="submit" class="btn btn-primary">
           Créer
         </button>
-      </div>
     </form>
   </div>
 </div>
