@@ -1,6 +1,8 @@
 
 @extends('layouts.app')
-@section('title', "Merci !" )
+@section('title', "Proposition bien recue !" )
+@section('description',
+         'Nous avons bien recu ta propostion. Elle est en cours de traitement. Garde un oeil sur ton tableau de bord pour voir le statut de ta propostion')
 @section('content')
 
 <div class="container">

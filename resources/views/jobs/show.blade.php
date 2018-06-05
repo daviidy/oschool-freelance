@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('title', "$job->title" )
+@section('description',
+         'Bienvenue sur Oschool Freelance ! Voici un job que nous te proposons: $job->title . Tu penses être qualifié pour ce job ? Postule maintenant dans ce cas !')
+
 @section('content')
 
 <div class="big-bloc-jobs-parent">
@@ -79,10 +82,10 @@
 
                   <div class="">
 
-                    <button class="btn btn-outline-primary bouton-autres-jobs" style="background-color: transparent; color: #000;" type="button" name="button">
-                      <a class="nav-link" href="{{ route('login') }}">
-                        Connecte toi pour postuler</a>
-                    </button>
+                    <a class="nav-link" href="{{ route('login') }}"><button class="btn bouton-shadow" type="button" name="button">
+
+                        Connecte toi pour postuler
+                    </button></a>
 
                   </div>
 

@@ -1,5 +1,8 @@
 @extends('layouts.app')
-@section('title', 'Faites le job de vos rêves')
+@section('title', 'Devenez freelance et faites le job de vos rêves !')
+@section('description',
+         'Bienvenue sur Oschool Freelance, la plateforme Ouest Africaine pour travailler en tant que freelance dans le domaine du Développement web, mobile, de logiciels, Marketing et Social Media. Choisis un job parmi des centaines.
+         Postule et commence à travailler avec nous !')
 @section('content')
 
 <section class="section-slider"> <!--debut section 1-->

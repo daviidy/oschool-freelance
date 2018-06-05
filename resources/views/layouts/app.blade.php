@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="@yield('description')">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -66,17 +67,18 @@
                           @endif
                       @endif
 
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
                       <span style="font-size: 28px;">&#124;</span>
-                    </li>
+                    </li> -->
 
                         <!-- Authentication Links -->
                         @guest
-                            <li><a class="nav-link" href="{{ route('login') }}">{{ __('Connectez-vous') }}</a></li>
-                            <li><a class="nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a></li>
+                            <li><button style="margin-right: 2rem;" class="btn bouton-shadow-secondary" type="button" name="button"> <a class="nav-link" href="{{ route('login') }}">{{ __('Connectez-vous') }}</a> </button></li>
+                            <li><button class="btn bouton-shadow" type="button" name="button"><a style="color: #fff;" class="nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a></button></li>
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a style="display:inline;" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                  <img style="position: relative; top: -7%" src="/img/usersPhotos/{{ Auth::user()->image }}" width="50px" class="rounded-circle">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 

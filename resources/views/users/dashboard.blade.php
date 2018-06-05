@@ -1,6 +1,8 @@
 @extends('layouts.app-dashboard')
 
-@section('title', 'Mon profil')
+@section('title', 'Profil Utilisateur')
+@section('description',
+         'Bienvenue sur ton profil utilisateur. Ici tu pourras modifier ton profil, et voir les états de tes différentes propositions')
 
 @section('content')
 
@@ -159,7 +161,7 @@
                                 <div class="card-body">
                                     <div class="author">
                                         <a href="#">
-                                            <img class="avatar border-gray" src="/assets/img/faces/default.png" alt="...">
+                                            <img class="avatar border-gray" src="/img/usersPhotos/{{ Auth::user()->image }}" alt="...">
                                             <h5 class="title">{{ Auth::user()->name }}</h5>
                                         </a>
                                         <p class="description">

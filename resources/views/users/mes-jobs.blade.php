@@ -1,6 +1,8 @@
 @extends('layouts.app-dashboard')
 
-@section('title', 'Mes jobs')
+@section('title', 'Jobs Utilisateurs')
+@section('description',
+         'Sur cette page, tu pourras consulter la liste de tes propostions et voir leur état (en attente, accepté ou refusé).')
 
 @section('content')
 
