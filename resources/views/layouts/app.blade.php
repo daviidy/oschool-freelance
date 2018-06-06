@@ -10,6 +10,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="icon" type="image/png" href="/assets/img/icone-oschool.ico">
+    <link rel="alternate" hreflang="fr" href="https://freelance.oschool.ci/" />
 
     <!--auparavant {{ config('app.name', 'Oschool Freelance') }} -->
     <title>Oschool Freelance | @yield('title')</title>
@@ -51,19 +52,19 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
 
-                      <li class="nav-item">
+                      <li class="nav-item menu">
                         <a class="nav-link" href="{{ route('jobs.index') }}">Jobs Oschool</a>
                       </li>
-                      <li class="nav-item">
+                      <li class="nav-item menu">
                         <a class="nav-link" href="#">A propos</a> <!-- {{ url('/apropos') }} -->
                       </li>
-                      <li class="nav-item">
+                      <li class="nav-item menu">
                         <a class="nav-link" href="https://oschool.ci" target="_blank">Forme-toi</a>
                       </li>
 
                       @if(Auth::check())
                           @if (Auth::user()->isAdmin())
-                          <a href="{{ route('jobs.create') }}" target="_blank" ><button style="margin-right: 1rem;" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Poste un job</button></a>
+                          <a href="{{ route('jobs.create') }}"><button style="margin-right: 1rem;" class="btn bouton-shadow menu" type="submit">Poste un job</button></a>
                           @endif
                       @endif
 

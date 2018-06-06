@@ -11,6 +11,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="icon" type="image/png" href="/assets/img/icone-oschool.ico">
+    <link rel="alternate" hreflang="fr" href="https://freelance.oschool.ci/" />
 
     <!-- Styles -->
     <!-- CSS Files -->
