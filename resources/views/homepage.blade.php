@@ -74,7 +74,7 @@
 
       <div class="col-12 col-sm-12 col-md-12 col-lg-12">
 
-        <h2 class="category-title">Trouve le job qui te correspond le mieux</h2>
+        <h2 class="category-title" style="text-align:center!important;">Trouve le job qui te correspond le mieux</h2>
 
       </div>
 
@@ -87,7 +87,7 @@
         <div class="espace-col">
 
           <img src="/img/coding.png" width="90" alt="">
-          <p class="paragraphe-icon">Développement web et mobile</p>
+          <p class="paragraphe-icon" class="text-center">Développement web et mobile</p>
 
         </div>
 
@@ -98,7 +98,7 @@
         <div class="espace-col">
 
           <img src="/img/light-bulb.png" width="90" alt="">
-          <p class="paragraphe-icon">Développement de logiciels</p>
+          <p class="paragraphe-icon" class="text-center">Développement de logiciels</p>
 
         </div>
 
@@ -109,7 +109,7 @@
         <div class="espace-col">
 
           <img src="/img/megaphone.png" width="90" alt="">
-          <p class="paragraphe-icon">Marketing et Social media</p>
+          <p class="paragraphe-icon" class="text-center">Marketing et Social media</p>
 
         </div>
 
@@ -158,7 +158,7 @@
 
         <div class="">
 
-          <img src="/img/logo1.png" alt="">
+          <img src="/img/rikudo tech2 blanc 200px.png" alt="">
 
         </div>
 
@@ -168,7 +168,7 @@
 
         <div class="">
 
-          <img src="/img/logo4.png" alt="">
+          <img src="/img/rikudo media blanc 200px.png" alt="">
 
         </div>
 
