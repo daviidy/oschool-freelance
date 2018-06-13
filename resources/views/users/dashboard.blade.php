@@ -165,7 +165,7 @@
                                             <h5 class="title">{{ Auth::user()->name }}</h5>
                                         </a>
                                         <p class="description">
-                                            <b>Freelancer</b>
+                                            <b>Freelancer</b> 
                                         </p>
                                     </div>
 

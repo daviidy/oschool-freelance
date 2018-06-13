@@ -38,10 +38,10 @@ Route::get('/mes-jobs', 'RouteController@mesJobs');
 Route::get('/notifications', 'RouteController@notifications');
 
 Route::get('/apropos', function () {
-    return view('apropos'); 
+    return view('apropos');
 });
 
-/*Route::get('proposals/{proposal}', 'ProposalController@acceptProposal');*/
+/*Route::get('proposals/{proposal}', 'ProposalController@acceptProposal');*/ 
 
 Route::get('/proposal/{reject}/{user}', 'ProposalController@rejectProposal')->name('proposal.reject');
 
