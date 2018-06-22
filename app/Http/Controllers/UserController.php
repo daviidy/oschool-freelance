@@ -95,7 +95,7 @@ class UserController extends Controller
     }
 
 
-  public function updateAvatar(Request $request){
+  public function updateAvatar(Request $request){ 
 
     $this->validate($request, [
       'image' => 'image',
