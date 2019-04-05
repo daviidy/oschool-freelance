@@ -106,7 +106,7 @@
                         </div>
 
                       @else
-                        <form enctype="multipart/form-data" action="{{ route('proposals.store') }}" method="post">
+                        <form enctype="multipart/form-data" action="{{ route('proposals.store') }}" method="post"> 
                             {{ csrf_field() }}
 
 

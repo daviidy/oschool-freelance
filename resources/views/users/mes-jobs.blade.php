@@ -30,7 +30,6 @@
                                         <tbody>
                                           @foreach($proposals as $proposal)
                                             <tr>
-
                                                 <td> {{ $proposal->job_title }} </td>
                                                 <td> {{ $proposal->price }} FCFA</td>
                                                 @if($proposal->status == "Accepté !")

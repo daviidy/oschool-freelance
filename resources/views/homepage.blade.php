@@ -5,7 +5,7 @@
          Postule et commence à travailler avec nous !')
 @section('content')
 
-<section class="section-slider"> <!--debut section 1-->
+<section class="section-slider"> <!--debut section 1--> 
 
   <div class="container-fluid slider">
 

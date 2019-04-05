@@ -80,7 +80,7 @@ class ProposalController extends Controller
     public function acceptProposal($user, $accept){
       $proposal = Proposal::where(['user_id' => $user, 'id' => $accept])->update([
         'status' => 'Accepté !'
-      ]);
+      ]);  
       return redirect('mes-jobs')->with('status', 'Modifications enregistrées !' );
     }
 

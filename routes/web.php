@@ -41,7 +41,7 @@ Route::get('/apropos', function () {
     return view('apropos');
 });
 
-/*Route::get('proposals/{proposal}', 'ProposalController@acceptProposal');*/ 
+/*Route::get('proposals/{proposal}', 'ProposalController@acceptProposal');*/
 
 Route::get('/proposal/{reject}/{user}', 'ProposalController@rejectProposal')->name('proposal.reject');
 

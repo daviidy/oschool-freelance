@@ -34,7 +34,11 @@
                                       @foreach ($jobs as $job)
                                           @foreach ($job->proposals as $proposal)
                                               <tr>
-                                                  <td>{{ $job->id }}</td>
+                                                  <td>
+                                                    @if ($loop->iteration == 1)
+                                                      {{ $job->id }}
+                                                    @endif
+                                                </td>
                                                   <td>
                                                   @if ($loop->iteration == 1)
                                                       <b>{{ $job->title }}: {{ $job->proposals->count() }} proposition(s)</b>
@@ -50,7 +54,7 @@
                                                     @elseif($proposal->status == "Refusé")
                                                     <p style="color: red;">{{ $proposal->status }}</p>
                                                     @else
-                                                    <p style="color: orange;">{{ $proposal->status }}</p>
+                                                    <p style="color: orange;">{{ $proposal->status }}</p> 
                                                     @endif
                                                     <div class="dropdown">
                                                       <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">

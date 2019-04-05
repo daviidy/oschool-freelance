@@ -4,7 +4,7 @@ Tip 1: You can change the color of the sidebar using: data-color="purple | blue 
 
 Tip 2: you can also add an image using data-image tag
 -->
-    <div class="sidebar-wrapper">
+    <div class="sidebar-wrapper"> 
         <div class="logo">
             <a href="/" class="simple-text">
                 <img src="/img/oschool freelance-fond-blanc.png" width="220px" alt="">

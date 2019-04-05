@@ -5,7 +5,7 @@
         @if(Request::path() == 'home')
         <a class="navbar-brand" href=""> Mon profil </a>
         @elseif(Request::path() == 'mes-jobs')
-          @if (Auth::user()->isAdmin())
+          @if (Auth::user()->isAdmin()) 
         <a class="navbar-brand" href=""> Liste des propositions </a>
           @else
         <a class="navbar-brand" href=""> Mes Jobs </a>
